@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Evergreen Lawn Co. — a fictional lawn-care website design portfolio sample.">
+<title>Evergreen Lawn Co. | Lawn Care</title>
+<style>
+:root{--green:#214e34;--green2:#2f6b45;--cream:#f5f3ea;--ink:#1b2a20;--muted:#617065;--white:#fff;--line:#e1e7df}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+a{color:inherit}
+.wrap{width:min(1120px,92%);margin:auto}
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.4px;color:var(--green)}
+.logo{display:grid;place-items:center;background:var(--green);color:#fff;width:38px;height:38px;border-radius:12px;font-size:21px}
+.navlinks{display:flex;gap:24px;align-items:center;font-size:14px}
+.navlinks a{text-decoration:none}
+.navlinks a:hover{text-decoration:underline}
+.pill{display:inline-block;background:var(--green);color:white;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:54px 0 72px}
+.eyebrow{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.7px;color:var(--green2)}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-3px;margin:14px 0 20px;max-width:650px}
+.hero p{font-size:18px;color:var(--muted);max-width:520px;margin:0 0 26px}
+.hero-art{min-height:360px;position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(155deg,#dce9ce,#b7d3a6);display:flex;align-items:center;justify-content:center}
+.sun{position:absolute;right:15%;top:12%;width:70px;height:70px;border-radius:50%;background:#f8d77d}
+.hill{position:absolute;bottom:-60px;width:120%;height:230px;border-radius:50% 50% 0 0}
+.hill.one{background:#6c9b61;left:-15%;transform:rotate(-7deg)}
+.hill.two{background:#39734b;left:15%;bottom:-100px;transform:rotate(8deg)}
+.house{position:relative;z-index:2;margin-top:28px;width:190px;height:140px;background:#fff7e6;border-radius:7px 7px 0 0;box-shadow:0 18px 40px #1c442522}
+.roof{position:absolute;left:-22px;top:-65px;width:234px;height:105px;background:#214e34;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.window{position:absolute;top:35px;left:28px;width:42px;height:42px;border:5px solid #d2b98b;background:#b7d5d9}
+.window.two{left:auto;right:28px}
+.door{position:absolute;bottom:0;left:77px;width:38px;height:68px;background:#bd9165;border-radius:5px 5px 0 0}
+.art-label{position:absolute;z-index:3;bottom:22px;left:22px;background:#ffffffdf;padding:10px 14px;border-radius:12px;font-weight:750;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;max-width:520px}
+.stat{border-left:3px solid #8cac80;padding-left:12px}
+.stat strong{display:block;font-size:20px;color:var(--green)}
+.stat span{font-size:12px;color:var(--muted)}
+section{padding:68px 0}
+.section-head{max-width:650px;margin-bottom:28px}
+h2{font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-1.5px;margin:8px 0 12px}
+.section-head p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 8px 25px #1d442808}
+.icon{width:48px;height:48px;border-radius:14px;background:#e9f1e4;display:grid;place-items:center;font-size:24px}
+.card h3{margin:18px 0 8px;font-size:20px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.about{background:#e9eee4}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:center}
+.about-box{background:var(--green);color:#fff;border-radius:24px;padding:32px}
+.about-box .big{font-size:54px;line-height:1;font-weight:850;letter-spacing:-2px}
+.about-box p{color:#d8e7d9}
+.about-copy p{color:var(--muted)}
+.checks{padding:0;list-style:none;display:grid;gap:10px}
+.checks li:before{content:"✓";color:var(--green2);font-weight:900;margin-right:10px}
+.cta{background:var(--green);color:#fff;border-radius:28px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.cta h2{max-width:560px;margin:8px 0}
+.cta p{color:#d8e7d9;margin:0}
+.cta .pill{background:#fff;color:var(--green);white-space:nowrap}
+footer{padding:28px 0 40px;color:var(--muted);font-size:13px}
+.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
+.disclaimer{background:#fff3d6;color:#614a15;border:1px solid #e8d59f;padding:12px 15px;border-radius:12px;font-size:12px;margin-top:20px}
+@media(max-width:760px){.navlinks{gap:12px}.navlinks a:not(.pill){display:none}.hero{grid-template-columns:1fr;padding:36px 0 48px;gap:28px}.hero-art{min-height:300px}h1{letter-spacing:-2px}.cards{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:25px}section{padding:48px 0}.cta{padding:28px;align-items:flex-start;flex-direction:column}.stats{gap:10px}.stat strong{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="wrap">
+<nav aria-label="Main navigation">
+  <a class="brand" href="#top" style="text-decoration:none"><span class="logo">✦</span><span>Evergreen <span style="font-weight:500">Lawn Co.</span></span></a>
+  <div class="navlinks"><a href="#services">Services</a><a href="#about">About</a><a class="pill" href="#contact">Get in touch</a></div>
+</nav>
+</header>
+<main id="top">
+<div class="wrap">
+<section class="hero" style="padding-top:28px">
+  <div>
+    <div class="eyebrow">Fresh air. Fresh starts.</div>
+    <h1>A lawn you'll love coming home to.</h1>
+    <p>Thoughtful lawn care and tidy outdoor spaces—so you can spend less time worrying about the yard and more time enjoying it.</p>
+    <a class="pill" href="#services">Explore our services ↗</a>
+    <div class="stats">
+      <div class="stat"><strong>Care-first</strong><span>Thoughtful service</span></div>
+      <div class="stat"><strong>Simple</strong><span>Clear communication</span></div>
+      <div class="stat"><strong>Local</strong><span>Community-minded</span></div>
+    </div>
+  </div>
+  <div class="hero-art" role="img" aria-label="Illustration of a small house surrounded by green rolling hills">
+    <div class="sun"></div><div class="hill one"></div><div class="hill two"></div>
+    <div class="house"><div class="roof"></div><div class="window"></div><div class="window two"></div><div class="door"></div></div>
+    <div class="art-label">A little greener, every day 🌿</div>
+  </div>
+</section>
+</div>
+<section id="services" style="background:#fff">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">What we do</div><h2>Care for every corner.</h2><p>From regular mowing to seasonal tidy-ups, the right details can make an outdoor space feel fresh again.</p></div>
+    <div class="cards">
+      <article class="card"><div class="icon">🌱</div><h3>Lawn Mowing</h3><p>Keep grass neat and welcoming with a simple, consistent lawn-care routine.</p></article>
+      <article class="card"><div class="icon">🍃</div><h3>Yard Cleanup</h3><p>Tidy up leaves and outdoor clutter to help your yard feel ready for the season.</p></article>
+      <article class="card"><div class="icon">✂️</div><h3>Edge Trimming</h3><p>Give borders and walkways a crisp finish with attention to the small details.</p></article>
+    </div>
+  </div>
+</section>
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="about-box"><div class="eyebrow" style="color:#b9d9b8">Our approach</div><div class="big">Good work.<br>Good ground.</div><p>Care for the space you call home.</p></div>
+    <div class="about-copy"><div class="eyebrow">A little about us</div><h2>Small details make a big difference.</h2><p>We believe a well-kept yard can make coming home feel even better. Our approach is simple: communicate clearly, respect each space, and take pride in the finish.</p><ul class="checks"><li>Clear, friendly communication</li><li>Careful attention to the details</li><li>Outdoor spaces that feel welcoming</li></ul></div>
+  </div>
+</section>
+<section id="contact">
+  <div class="wrap">
+    <div class="cta"><div><div class="eyebrow" style="color:#b9d9b8">Let's talk outdoors</div><h2>Ready to give your yard a fresh start?</h2><p>Reach out to ask about services or discuss what your space needs.</p></div><a class="pill" href="mailto:hello@example.com">Email us ↗</a></div>
+    <div class="disclaimer"><strong>Portfolio demo:</strong> Evergreen Lawn Co. is a fictional business created to demonstrate website design. Services, claims, and contact details are examples only. The email link is a placeholder and is not monitored.</div>
+  </div>
+</section>
+</main>
+<footer class="wrap"><div class="footer-row"><span>© <span id="year">2026</span> Evergreen Lawn Co. · Sample project</span><span>Designed as a beginner web-design portfolio piece.</span></div></footer>
+</body>
+</html>
